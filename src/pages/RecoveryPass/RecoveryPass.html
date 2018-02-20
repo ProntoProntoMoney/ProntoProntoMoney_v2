@@ -1,0 +1,41 @@
+<ion-content>
+  <ion-grid style="background-color:#c6c3e1;"><!-- style="background-color:#CED8F6;"-->
+    <ion-row > 
+      <ion-col col-2>
+            <img  src="./assets/imgs/logo.png"  (click)="closeModal()" width="60" height="40"  />
+      </ion-col>
+      <ion-col col-8 style="font-size: 20px;text-align: center; color: #003399; font-family: 'Myriad Pro'; line-height: 39px;" >
+            <span  >{{"ReTitle" | translate }}</span>
+      </ion-col>
+      <ion-col col-2>
+        <img  src="./assets/imgs/arrow_back.png"  (click)="closeModal()" width="60" height="40"/>
+      </ion-col>      
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid >
+    <ion-row > 
+      <ion-col col-12>
+          <ion-item >
+              <ion-label color="primary" style=" font-size: 20px;"  floating>{{"ReEmail" | translate }}</ion-label>
+              <ion-input type="email" [(ngModel)]="this.ptrGlobals.emailRecovery"  ></ion-input>
+          </ion-item>
+      </ion-col>
+
+    </ion-row > 
+    <ion-row >           
+        <ion-col col-12 style="font-size: 15px;text-align: center" >
+                {{"ReText" | translate }}
+        </ion-col>
+    </ion-row>  
+
+    <ion-row >           
+      <ion-col col-12>
+          <button ion-button round icon-right (click)="this.ClientMethods.onRecoveryPass()" class="btn-Login-close center">
+            {{"RebtnSend" | translate }}
+               <ion-icon ios="ios-send-outline" md="md-send"></ion-icon>
+          </button>        
+      </ion-col>
+    </ion-row>  
+  </ion-grid>
+</ion-content>

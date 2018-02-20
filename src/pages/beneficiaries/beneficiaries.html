@@ -1,0 +1,44 @@
+<ion-content>
+    <ion-grid style="background-color:#c6c3e1; ">
+        <ion-row > 
+        <ion-col col-2>
+                <img  src="./assets/imgs/logo.png"  width="60" height="40"  />
+        </ion-col>
+        <ion-col col-8 style="font-size: 20px; text-align: center; color: #003399; font-family: 'Myriad Pro'; line-height: 39px;" >
+                <span >{{"BeTitle" | translate }}</span>
+        </ion-col>
+        <ion-col col-2>
+        </ion-col>
+  
+        </ion-row>
+    </ion-grid>
+    <ion-list>
+            <ion-item>    
+                <ion-row>
+                    <button ion-button round icon-right  class="btn-Continue center"  (click)="onOpenNew()">
+                        {{"BebtnNew" | translate }}
+                    </button> 
+                </ion-row>   
+            </ion-item>    
+        <ion-item>
+            <ion-row  *ngFor="let name of this.ptrSendMoney.lstBeneficiaries" >
+                <ion-col col-2 (click)="onEdit(name)">
+                    <ion-avatar item-left>
+                        <img src="http://www.prontoprontomoney.com/img/{{name.Country_Code}}.png">
+                    </ion-avatar>
+                </ion-col>
+                <ion-col col-8 (click)="onEdit(name)">
+                    <br/>
+                    <h2> {{name.REC_FirstName}} {{name.REC_LastName1}} {{name.REC_LastName2}}  </h2>
+                </ion-col>
+                <ion-col col-2  (click)="onEdit(name)">
+                                     
+                    <img src="http://www.prontoprontomoney.com/img/icons/edit.png" width="60" height="40" >
+                    
+                </ion-col>    
+
+            </ion-row>
+        </ion-item>     
+     
+    </ion-list>
+</ion-content>

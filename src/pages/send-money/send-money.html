@@ -1,0 +1,99 @@
+<ion-content>
+    <ion-grid style="background-color:#c6c3e1;" no-padding><!-- style="background-color:#CED8F6;"-->
+      <ion-row > 
+        <ion-col col-2>
+              <img  src="./assets/imgs/logo.png"  width="60" height="40"  />
+        </ion-col>
+        <ion-col col-8 style="font-size: 20px;text-align: center; color: #003399; font-family: 'Myriad Pro'; line-height: 39px;" >
+              <span >{{"SmTitle" | translate }}</span>
+        </ion-col>
+        <ion-col col-2>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid no-padding >
+        <ion-row > 
+          <ion-col col-12>
+            <ion-item (click)="onOpenModal()" style="text-align: center ; font-size: 18px;" >
+                {{this.ptrSendMoney.Name_Beneficiario}}  
+                <ion-avatar item-left>                  
+                    <img  src="http://www.prontoprontomoney.com/img/{{this.ptrSendMoney.LastCountry_Code}}.png" width="80" height="60" class="avatar" />  
+                </ion-avatar>
+           </ion-item>                 
+          </ion-col>     
+        </ion-row>  
+
+        <ion-row >   
+          <ion-col col-12>
+            <ion-item >
+                <ion-label  style="font-size: 18px;color: rgba(0, 0, 255, 0.645); " >Send CAD</ion-label>
+                <ion-input type=text [value]="firstName"   style="font-size: 25px; text-align-last: right; color:#52658C; " [formControl]="firstNameControl"></ion-input> 
+            </ion-item >  
+          </ion-col>
+   
+          <ion-col col-12>
+            <ion-item >                      
+                <ion-label  style="font-size: 18px;color: rgba(0, 0, 255, 0.645); " >Receive {{this.cotizador.Currency_Payment}}</ion-label>
+                <ion-input type=text [value]="firstName2" (input)="budget = format(budget)"  style="font-size: 25px; text-align-last: right;color:#52658C" [formControl]="firstNameControl2" ></ion-input> 
+            </ion-item >  
+          </ion-col>          
+        </ion-row>               
+
+        <ion-row >         
+            <ion-label stacked style="font-size: 18px;color: rgba(0, 0, 255, 0.645); text-align: center; font-weight: bold;" >{{"nwtitle" | translate }}</ion-label>          
+        </ion-row>  
+       
+        <ion-row >         
+        <ion-col col-12  (click)="onOpenModalBanks()">
+            <ion-item >                      
+                <ion-label  style="font-size: 20px;color: rgba(0, 0, 255, 0.645); " > {{"SmBankDeposit" | translate }} </ion-label>   
+                <ion-label  style="font-size: 18px;color: #52658C;  font-weight: bold;  text-align-last: right; " >{{this.ptrSendMoney.Name_Bank}} </ion-label>
+            </ion-item >  
+          </ion-col>          
+        </ion-row>  
+
+        <ion-row >         
+            <ion-col col-12  (click)="onOpenModalPayers()"> 
+                <ion-item >                      
+                    <ion-label  style="font-size: 20px;color: rgba(0, 0, 255, 0.645);  " > {{"SmCashpickup" | translate }} </ion-label>   
+                    <ion-label  style="font-size: 18px;color: #52658C;  font-weight: bold;  text-align-last: right;" > {{this.ptrSendMoney.Name_Payer}} </ion-label>
+                </ion-item >  
+            </ion-col>          
+        </ion-row>  
+
+               
+        <ion-row >   
+            <ion-col col-12>
+              <ion-item>
+                  <ion-label style="font-size: 20px;color: rgba(0, 0, 255, 0.645); text-align: center; " >    {{"SmPromotionalcode" | translate }}</ion-label>
+                  <ion-input  style="font-size: 20px;color: #52658C;  font-weight: bold;  text-align-last: right;" type=text [value]="promocode"  [formControl]="promocodeControl"  ></ion-input> 
+              </ion-item >  
+             </ion-col>
+        </ion-row>      
+                  
+        
+        <ion-row >   
+            <ion-col col-12>
+              <ion-item no-lines >
+                  <ion-label  style="font-size: 18px;color: rgba(0, 0, 255, 0.645); text-align: center; " > {{"SmFee" | translate }}</ion-label>
+                  <ion-input style="font-size: 25px;color: black; text-align-last: right; font-weight: bold" disabled="true" [(ngModel)]="this.cotizador.FeeINTER" ></ion-input>       
+              </ion-item >  
+            </ion-col>
+        </ion-row>                 
+        
+        <ion-row>   
+            <ion-col col-12>
+              <ion-item >
+                  <ion-label style="font-size: 18px;color: rgba(0, 0, 255, 0.645);  width: 100%; font-weight: bold;" floating > {{"SmTotaltopay" | translate }}</ion-label>
+                  <ion-input style="font-size: 50px;color: black; text-align-last: center; font-weight: bold ;  "  disabled="true" [value]="totaltopay" ></ion-input> 
+              </ion-item >  
+            </ion-col>
+        </ion-row>      
+      
+        <button ion-button round icon-right block [disabled]="this.cotizador.ErrorPromo == 1 " class="btn-Continue center"  (click)="onSave()">
+          {{"SmbtnContinue" | translate }}
+        </button>       
+
+    </ion-grid>    
+</ion-content>

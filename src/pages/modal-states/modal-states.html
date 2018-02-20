@@ -1,0 +1,8 @@
+ 
+  <ion-content padding>
+      <ion-list>
+          <ion-item *ngFor="let name of this.ptrGlobals.lstStates" (click)="onSave(name.St_Name,name.State_ID )"> 
+              <h2>{{name.St_Name}}  </h2>
+          </ion-item>      
+      </ion-list>
+  </ion-content>

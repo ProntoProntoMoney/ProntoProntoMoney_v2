@@ -1,0 +1,19 @@
+<!--
+  Generated template for the ModalCountriesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item *ngFor="let name of this.ptrGlobals.lstCountry[0]" (click)="onSave( name.CTR_Name,name.Country_Code)">
+            <ion-avatar item-left>
+                <img src="http://www.prontoprontomoney.com/img/{{name.Country_Code}}.png">
+            </ion-avatar>          
+            <h2>{{name.CTR_Name}}  </h2>
+        </ion-item>      
+    </ion-list>
+</ion-content>

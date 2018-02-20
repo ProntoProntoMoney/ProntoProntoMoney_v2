@@ -1,0 +1,36 @@
+<ion-content padding >
+    
+  <img  src="./assets/imgs/logo.png"  width="238" height="150" class="center" />
+    <ion-item>
+        <ion-label color="primary" style="font-size: 18px;"  floating>{{"logUsername" | translate }}</ion-label>
+        <ion-input  [(ngModel)]="this.ptrGlobals.user"></ion-input>
+    </ion-item>
+   
+    <ion-item >
+        <ion-label color="primary" style="font-size: 18px;" floating>{{"LogPassword" | translate }}</ion-label>
+        <ion-input type="password" [(ngModel)]="this.ptrGlobals.password"></ion-input>
+    </ion-item>
+
+    <!--{{this.ptrGlobals.token}}-->
+
+    <button ion-button round icon-right (click)="this.ClientMethods.onlogin()" class="btn-Login center">
+        {{"LogBtnLogin" | translate }}
+         <ion-icon ios="ios-key" md="md-key"></ion-icon>
+    </button>
+
+    <button ion-button round icon-right clear (click)="onRecoveryPass()" class="center" style="top: 50px;">
+        {{"LogForgot" | translate }}
+    </button>    
+
+    <button ion-button round icon-right clear  class="center" style="top: 50px; font-size: 20px;">
+        {{"TaRegister" | translate}}
+    </button>    
+
+    
+    <button ion-button round icon-right clear  class="center" style="top: 60px;font-size: 25px;" (click)="onclick2()">
+        {{this.cotizador.ExchageRateCADvsLOC}}  {{this.cotizador.Currency_Payment}}         
+        {{this.ExchageRateCADvsLOC}}  {{this.Currency_Payment}}                 
+        <img src="http://www.prontoprontomoney.com/img/{{this.cotizador.Country_Code}}.png" width="30px" > 
+    </button>    
+        
+</ion-content>

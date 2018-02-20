@@ -1,0 +1,146 @@
+<ion-content >
+  <ion-grid style="background-color:#c6c3e1;">
+    <ion-row > 
+      <ion-col col-2>
+            <img  src="./assets/imgs/logo.png"  (click)="onClose()" width="60" height="40"  />
+      </ion-col>
+      <ion-col col-8 style="font-size: 20px; text-align: center; color: #003399; font-family: 'Myriad Pro'; line-height: 39px;" >
+            <span >{{"EbTitle" | translate }} </span>
+      </ion-col>
+      <ion-col col-2>
+        <img  src="./assets/imgs/arrow_back.png"  (click)="onClose()" width="60" height="40"/>             
+      </ion-col>      
+    </ion-row>
+  </ion-grid>
+
+ <form [formGroup]="addDataForm" (submit)="onsave()" novalidate>
+
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"Edname" | translate }}</ion-label>
+            <ion-input formControlName="REC_FirstName" type="text" placeholder="{{'Edname' | translate }}"  
+                  [class.invalid]="!addDataForm.controls.REC_FirstName.valid && addDataForm.controls.REC_FirstName.dirty">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.REC_FirstName.valid && addDataForm.controls.REC_FirstName.dirty">
+          <p> {{"EdnameErr" | translate }}</p>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"EdLastname" | translate }}</ion-label>
+            <ion-input formControlName="REC_LastName1" type="text" placeholder="{{'EdLastname' | translate }}"  
+                  [class.invalid]="!addDataForm.controls.REC_LastName1.valid && addDataForm.controls.REC_LastName1.dirty">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.REC_LastName1.valid && addDataForm.controls.REC_LastName1.dirty">
+          <p> {{"EdLastnameErr" | translate }}</p>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"Edseclastname" | translate }}</ion-label>
+            <ion-input formControlName="REC_LastName2" type="text" placeholder="{{'Edseclastname' | translate }}"  
+                  [class.invalid]="!addDataForm.controls.REC_LastName2.valid && addDataForm.controls.REC_LastName2.dirty">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.REC_LastName2.valid && addDataForm.controls.REC_LastName2.dirty">
+          <p> {{"EdseclastnameErr" | translate }}</p>
+        </ion-item>        
+
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"EdCountrycode" | translate }}</ion-label>
+            <ion-input type="button" formControlName="Country_Code" [(ngModel)]="this.ptrGlobals.country_name" value="{{this.ptrGlobals.country_name}}"  
+                  [class.invalid]="!addDataForm.controls.Country_Code.valid && addDataForm.controls.Country_Code.dirty"  (click)="onOpenModal()">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.Country_Code.valid && addDataForm.controls.Country_Code.dirty">
+          <p> {{"EdCountrycodeErr" | translate }}</p>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"EdAddress" | translate }}</ion-label>
+            <ion-input formControlName="REC_Address" type="text" placeholder="{{'EdAddress' | translate }}"  
+                  [class.invalid]="!addDataForm.controls.REC_Address.valid && addDataForm.controls.REC_Address.dirty">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.REC_Address.valid && addDataForm.controls.REC_Address.dirty">
+          <p> {{"EdAddressErr" | translate }}</p>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"EdCity" | translate }}</ion-label>
+            <ion-input formControlName="REC_City" type="text" placeholder="{{'EdCity' | translate }}"  
+                  [class.invalid]="!addDataForm.controls.REC_City.valid && addDataForm.controls.REC_City.dirty">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.REC_City.valid && addDataForm.controls.REC_City.dirty">
+          <p> {{"EdCityErr" | translate }}</p>
+        </ion-item>
+        
+
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"EdState" | translate }}</ion-label>
+            <ion-input type="button" formControlName="REC_State" [(ngModel)]="this.ptrGlobals.State_Name" value="{{this.ptrGlobals.State_Name}}"  
+                  [class.invalid]="!addDataForm.controls.REC_State.valid && addDataForm.controls.REC_State.dirty"  (click)="onOpenModalStates()">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.REC_State.valid && addDataForm.controls.REC_State.dirty">
+          <p> {{"EdStateErr" | translate }}</p>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"EdZipcode" | translate }}</ion-label>
+            <ion-input formControlName="REC_ZipCode" type="text" placeholder="{{'EdZipcode' | translate }}"  
+                  [class.invalid]="!addDataForm.controls.REC_ZipCode.valid && addDataForm.controls.REC_ZipCode.dirty">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.REC_ZipCode.valid && addDataForm.controls.REC_ZipCode.dirty">
+          <p> {{"EdZipcodeErr" | translate }}</p>
+        </ion-item>                
+
+
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"EdPhoneNumber" | translate }}</ion-label>
+            <ion-input formControlName="REC_Phone1" type="number" placeholder="{{'EdPhoneNumber' | translate }}"  
+                  [class.invalid]="!addDataForm.controls.REC_Phone1.valid && addDataForm.controls.REC_Phone1.dirty && addDataForm.controls.REC_Phone1.touched">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.REC_Phone1.valid && addDataForm.controls.REC_Phone1.dirty">
+          <p> {{"EdPhoneNumberErr" | translate }}</p>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"EdEmai" | translate }}</ion-label>
+            <ion-input formControlName="REC_Email" type="email" placeholder="{{'EdEmai' | translate }}"  
+                  [class.invalid]="!addDataForm.controls.REC_Email.valid && addDataForm.controls.REC_Email.dirty">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.REC_Email.valid && addDataForm.controls.REC_Email.dirty">
+          <p> {{"EdEmaiErr" | translate }}</p>
+        </ion-item>        
+
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"EdIdnumber" | translate }}</ion-label>
+            <ion-input formControlName="REC_IDNumber" type="text" placeholder="{{'EdIdnumber' | translate }}"  
+                  [class.invalid]="!addDataForm.controls.REC_IDNumber.valid && addDataForm.controls.REC_IDNumber.dirty">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.REC_IDNumber.valid && addDataForm.controls.REC_IDNumber.dirty">
+          <p> {{"EdIdnumberErr" | translate }}</p>
+        </ion-item>        
+
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"EdPropuse" | translate }}</ion-label>
+            <ion-input formControlName="REC_WirePropuse" type="text" placeholder="{{'EdPropuse' | translate }}"  
+                  [class.invalid]="!addDataForm.controls.REC_WirePropuse.valid && addDataForm.controls.REC_WirePropuse.dirty">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.REC_WirePropuse.valid && addDataForm.controls.REC_WirePropuse.dirty">
+          <p> {{"EdPropuseErr" | translate }}</p>
+        </ion-item>           
+           
+   
+        <button ion-button round icon-right block type="submit" [disabled]="!addDataForm.valid" class="btn-Account center" ><!--(click)="onSave()"-->
+          {{"EdbtnUpdate" | translate }}
+        </button>    
+            
+    </form>
+</ion-content>

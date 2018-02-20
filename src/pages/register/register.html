@@ -1,0 +1,158 @@
+<ion-content>
+    <ion-grid style="background-color:#c6c3e1;"><!-- style="background-color:#CED8F6;"-->
+      <ion-row > 
+        <ion-col col-4>
+              <img  src="./assets/imgs/logo.png"  width="60" height="40"  />
+        </ion-col>
+        <ion-col col-8>
+              <span class="title-center">{{"ReTitle2" | translate }}</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+
+    <form [formGroup]="addDataForm" (submit)="onSave()" novalidate>
+
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"ReName" | translate }}</ion-label>
+            <ion-input formControlName="Name" type="text" placeholder="{{'ReName' | translate }}"  
+                  [class.invalid]="!addDataForm.controls.Name.valid && addDataForm.controls.Name.dirty">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.Name.valid && addDataForm.controls.Name.dirty">
+          <p> {{"ReNameErr" | translate }}</p>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"ReLastname" | translate }}</ion-label>
+            <ion-input formControlName="LastName" type="text" placeholder="{{'ReLastname' | translate }}"  
+                  [class.invalid]="!addDataForm.controls.LastName.valid && addDataForm.controls.LastName.dirty">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.LastName.valid && addDataForm.controls.LastName.dirty">
+          <p> {{"ReLastnameErr" | translate }}</p>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"ReSeclastname" | translate }}</ion-label>
+            <ion-input formControlName="SecondLastName" type="text" placeholder="{{'ReSeclastname' | translate }}"  
+                  [class.invalid]="!addDataForm.controls.SecondLastName.valid && addDataForm.controls.SecondLastName.dirty">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.SecondLastName.valid && addDataForm.controls.SecondLastName.dirty">
+          <p> {{"ReSeclastnameErr" | translate }}</p>
+        </ion-item>        
+
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"ReProffesion" | translate }}</ion-label>
+            <ion-input formControlName="Profession" type="text" placeholder="{{'ReProffesion' | translate }}"  
+                  [class.invalid]="!addDataForm.controls.Profession.valid && addDataForm.controls.Profession.dirty">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.Profession.valid && addDataForm.controls.Profession.dirty">
+          <p> {{"ReProffesionErr" | translate }}</p>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"ReAddress" | translate }}</ion-label>
+            <ion-input formControlName="Address" type="text" placeholder="{{'ReAddress' | translate }}"  
+                  [class.invalid]="!addDataForm.controls.Address.valid && addDataForm.controls.Address.dirty">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.Address.valid && addDataForm.controls.Address.dirty">
+          <p> {{"ReAddressErr" | translate }}</p>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"ReCity" | translate }}</ion-label>
+            <ion-input formControlName="City" type="text" placeholder="{{'ReCity' | translate }}"  
+                  [class.invalid]="!addDataForm.controls.City.valid && addDataForm.controls.City.dirty">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.City.valid && addDataForm.controls.City.dirty">
+          <p> {{"ReCityErr" | translate }}</p>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"ReState" | translate }}</ion-label>
+            <ion-input type="button" formControlName="State" [(ngModel)]="this.ptrGlobals.State_Name" value="QUEBEC"  
+                  [class.invalid]="!addDataForm.controls.State.valid && addDataForm.controls.State.dirty"  (click)="onOpenModal()">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.State.valid && addDataForm.controls.State.dirty">
+          <p> {{"ReStateErr" | translate }}</p>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"ReZipcode" | translate }}</ion-label>
+            <ion-input formControlName="ZipCode" type="text" placeholder="{{'ReZipcode' | translate }}"  
+                  [class.invalid]="!addDataForm.controls.ZipCode.valid && addDataForm.controls.ZipCode.dirty">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.ZipCode.valid && addDataForm.controls.ZipCode.dirty">
+          <p> {{"ReZipcodeErr" | translate }}</p>
+        </ion-item>                
+
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"RePhoneNumber" | translate }}</ion-label>
+            <ion-input formControlName="PhoneNumber" type="number" placeholder="{{'RePhoneNumber' | translate }}"  
+                  [class.invalid]="!addDataForm.controls.PhoneNumber.valid && addDataForm.controls.PhoneNumber.dirty">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.PhoneNumber.valid && addDataForm.controls.PhoneNumber.dirty">
+          <p> {{"RePhoneNumberErr" | translate }}</p>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"ReDateofbirth" | translate }}</ion-label>
+            <ion-datetime displayFormat="MM/DD/YYYY" formControlName="DateofBirth" placeholder="{{'ReDateofbirth' | translate }}"  
+            [class.invalid]="!addDataForm.controls.DateofBirth.valid && addDataForm.controls.DateofBirth.dirty"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"ReEmail2" | translate }}</ion-label>
+            <ion-input formControlName="Email" type="email" placeholder="{{'ReEmail2' | translate }}"  
+                  [class.invalid]="!addDataForm.controls.Email.valid && addDataForm.controls.Email.dirty">
+            </ion-input>>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!addDataForm.controls.Email.valid && addDataForm.controls.Email.dirty">
+          <p> {{"ReEmail2Err" | translate }}</p>
+        </ion-item>        
+
+        
+        
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"RePassword" | translate }}</ion-label>
+            <ion-input type="password" value="" formControlName="password" placeholder="{{'RePassword' | translate }}" 
+                  [class.invalid]="!addDataForm.controls.password.valid && addDataForm.controls.password.dirty">
+            </ion-input>    
+        </ion-item>
+            
+        <ion-item class="error-message" *ngIf="( addDataForm.get('password').hasError('required') ) && addDataForm.get('password').touched">
+          <p> {{"RePasswordErr" | translate }}</p>
+        </ion-item>
+            
+        <ion-item>
+            <ion-label color="primary" style="font-size: 18px;" stacked>{{"ReRepeatpass" | translate }}</ion-label>
+            <ion-input type="password" value="" formControlName="re_password" placeholder="{{'ReRepeatpass' | translate }}" 
+                  [class.invalid]="!addDataForm.controls.re_password.valid && addDataForm.controls.re_password.dirty">
+            </ion-input>    
+        </ion-item>
+
+        <ion-item no-lines *ngIf="( addDataForm.get('re_password').hasError('equalTo') || addDataForm.get('re_password').hasError('required') ) && addDataForm.get('re_password').touched">
+            <p class="error-message" *ngIf="addDataForm.get('re_password').hasError('required') && addDataForm.get('re_password').touched">
+                {{"RePasswordErrReq" | translate }}
+            </p>
+            <p class="error-message" *ngIf="addDataForm.get('re_password').hasError('equalTo') && addDataForm.get('re_password').touched">
+                {{"RePasswordErrMitmach" | translate }}
+            </p>
+        </ion-item>        
+        
+        <button ion-button round icon-right block type="submit" [disabled]="!addDataForm.valid" class="btn-Account center" ><!--(click)="onSave()"-->
+          {{"RebtnCreateorUpdate" | translate }}
+        </button>    
+            
+    </form>
+
+</ion-content>

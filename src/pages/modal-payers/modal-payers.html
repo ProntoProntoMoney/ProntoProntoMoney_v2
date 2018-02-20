@@ -1,0 +1,20 @@
+<!--
+  Generated template for the ModalCountriesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  </ion-header>
+  
+  <ion-content padding>
+
+      <ion-list>
+          <ion-item *ngFor="let name of this.ptrSendMoney.lstPayers[0]" (click)="onSave( name.AgPayer_ID ,name.AGP_Name,name.Country_Code)">
+              <ion-avatar item-left>
+                  <img src="http://www.prontoprontomoney.com/img/Payer/{{name.AgPayer_ID}}.png" width="60" height="38" class="avatar">
+              </ion-avatar>          
+              <h2> {{name.AGP_Name}} </h2>
+            </ion-item>                
+      </ion-list>
+  </ion-content>

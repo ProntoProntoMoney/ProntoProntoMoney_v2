@@ -1,0 +1,73 @@
+<ion-content>
+  <ion-grid style="background-color:#c6c3e1;"><!-- style="background-color:#CED8F6;"-->
+    <ion-row > 
+      <ion-col col-3>
+            <img  src="./assets/imgs/logo.png"  width="60" height="40"  />
+      </ion-col>
+      <ion-col col-9>
+            <span class="title-center">{{"QqTitle" | translate }}</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid >
+    <ion-row > 
+   
+      <ion-col col-4>
+          <img  src="./assets/imgs/CA.png" width="60" height="38" class="flags" />          
+          <ion-label style=" font-size: 20px; text-align: center; color: blue;" >CAD</ion-label>
+      </ion-col>
+      <ion-col col-8>
+          <ion-item >
+              <ion-label color="primary" style=" font-size: 20px;"  floating>{{"QqSendCad" | translate }}</ion-label>
+              <ion-input type=text [value]="firstName" style=" font-size: 25px;font-weight: bold;"  [formControl]="firstNameControl" ></ion-input> 
+          </ion-item>
+      </ion-col>      
+    </ion-row>  
+    <ion-row > 
+     
+      <ion-col col-4>
+          <img  src="http://www.prontoprontomoney.com/img/{{this.cotizador.Country_Code}}.png" width="60" height="38" class="flags" (click)="onOpenModal()"/> 
+          <ion-label style=" font-size: 20px; text-align: center; color: blue;" >{{this.cotizador.Currency_Payment}}</ion-label>  
+      </ion-col>
+      <ion-col col-8>
+          
+          <ion-item >
+              <ion-label color="primary" style=" font-size: 20px;"  floating>{{"QqReceiver" | translate }}</ion-label>
+              <ion-input type=text [value]="firstName2" style=" font-size: 25px;font-weight: bold;"  [formControl]="firstNameControl2"  ></ion-input>   
+          </ion-item>
+      </ion-col>      
+    </ion-row>    
+ 
+    <ion-row >   
+      <ion-col col-12>
+        <ion-item >
+            <ion-label style="font-size: 20px;color:rgba(80, 142, 255, 0.645); text-align: center; " >{{"QqExchangerate" | translate }}</ion-label>
+            <ion-input style="font-size: 20px;color: black; text-align-last: right; font-weight: bold" disabled="true" [(ngModel)]="this.cotizador.ExchageRateCADvsLOC" ></ion-input>                  
+        </ion-item >  
+      </ion-col>
+    </ion-row>          
+    <ion-row > 
+      <ion-col col-12>
+        <ion-item >
+            <ion-label style="font-size: 20px;color: rgba(80, 142, 255, 0.645);; text-align: center; " >{{"QqFee" | translate }}</ion-label>
+            <ion-input style="font-size: 20px;color: black; text-align-last: right; font-weight: bold" disabled="true" [(ngModel)]="this.cotizador.FeeINTER" ></ion-input>                  
+        </ion-item >  
+      </ion-col>
+    </ion-row>          
+    <ion-row > 
+      <ion-col col-12>
+        <ion-item>
+            <ion-label style="font-size: 20px;color: blue; font-weight: bold " >{{"QqTotaltopay" | translate }}</ion-label>
+            <ion-input style="font-size: 25px;color: blue; text-align-last: right; font-weight: bold"  disabled="true" [value]="totaltopay" ></ion-input>   
+        </ion-item>      
+      </ion-col>
+    </ion-row>      
+    <button ion-button round icon-right block  class="btn-Continue center" (click)="closeModal()" ><!--(click)="onSave()"-->
+      {{"QqbtnContinue" | translate }}
+    </button>  
+    
+</ion-grid>    
+
+
+</ion-content>

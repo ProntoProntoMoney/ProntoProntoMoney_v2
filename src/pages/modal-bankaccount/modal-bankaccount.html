@@ -1,0 +1,53 @@
+<ion-content>
+  <ion-grid style="background-color:#c6c3e1;"><!-- style="background-color:#CED8F6;"-->
+    <ion-row > 
+      <ion-col col-2>
+            <img  src="./assets/imgs/logo.png"  (click)="onClose()" width="60" height="40"  />
+      </ion-col>
+      <ion-col col-8 style="font-size: 20px;text-align: center; color: #003399; font-family: 'Myriad Pro'; line-height: 39px;" >
+            <span > {{"BaTitle" | translate }}</span>
+      </ion-col>
+      <ion-col col-2>
+        <img  src="./assets/imgs/arrow_back.png"  (click)="onClose()" width="60" height="40"/>      
+      </ion-col>      
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-list radio-group>
+    <ion-item>
+      <ion-label>{{"BaSaving" | translate }}</ion-label>
+      <ion-radio checked="true" value="SAV" (click)="onSaveChecked('SAV','')" ></ion-radio>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>{{"BaChecking" | translate }} </ion-label>
+      <ion-radio value="CHK" (click)="onSaveChecked('CHK','')"></ion-radio>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>{{"BaOther" | translate }}</ion-label>
+      <ion-radio value="OTH" (click)="onSaveChecked('OTH','')"></ion-radio>
+    </ion-item>
+  </ion-list>
+  
+  <br/>
+  <ion-row >   
+    <ion-col col-12>
+      <ion-item >
+          <ion-label  style="font-size: 20px;color: rgba(0, 0, 255, 0.645); text-align: center; " >{{"BaNumberAccount" | translate }}</ion-label>
+          <ion-input type="number" style="font-size: 20px;color: black; text-align-last: right; font-weight: bold"  [(ngModel)]="this.ptrNewWire.BankAcNumber"></ion-input>       
+      </ion-item >  
+    </ion-col>
+</ion-row>      
+
+<br/>
+  <ion-row >   
+    <ion-col col-12>
+      <button ion-button round icon-right block  class="btn-Continue center"  (click)="onSave(this.ptrNewWire.BankAcNumber)">
+        {{"BabtnContinue" | translate }}
+      </button>    
+    </ion-col>
+  </ion-row>     
+
+</ion-content>

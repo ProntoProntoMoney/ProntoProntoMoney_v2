@@ -1,0 +1,66 @@
+<ion-content>
+  <ion-grid style="background-color:#c6c3e1;"><!-- style="background-color:#CED8F6;"-->
+      <ion-row > 
+      <ion-col col-2>
+              <img  src="./assets/imgs/logo.png"  width="60" height="40"  />
+      </ion-col>
+      <ion-col col-8 style="font-size: 20px; text-align: center; color: #003399; font-family: 'Myriad Pro'; line-height: 39px;" >
+              <span >{{"HeTitle" | translate }}</span>
+      </ion-col>
+      <ion-col col-2>
+      </ion-col>
+      </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+        <ion-col col-12  text-center> 
+          <span style="color: blue; font-size: 18px; align-items: center;">{{"HeTitle2" | translate }}</span>
+        </ion-col>
+    </ion-row>
+    <ion-row >   
+      <ion-col col-12>
+        <ion-item >
+            <ion-label stacked style="font-size: 18px;color: rgba(0, 0, 255, 0.645); text-align: center; " >{{"HeContactname" | translate }}</ion-label>
+            <ion-input type=text ></ion-input> 
+        </ion-item >  
+      </ion-col>
+    </ion-row>
+
+    <ion-row >   
+      <ion-col col-12>
+        <ion-item > 
+          <ion-label>{{"HeTypeofmessage" | translate }} </ion-label>
+          <ion-select [(ngModel)]="this.ptrHelp.typehelp">
+            <ion-option checked="true" value="Question">{{"HeQuestion" | translate }}</ion-option>
+            <ion-option value="Incident">{{"HeIncident" | translate }}</ion-option>
+            <ion-option value="Problem">{{"HeProblem" | translate }}</ion-option>
+            <ion-option value="Other">{{"HeOther" | translate }}</ion-option>
+          </ion-select>        
+        </ion-item >  
+      </ion-col>
+    </ion-row>    
+
+    <ion-row >   
+      <ion-col col-12>
+        <ion-item >
+            <ion-label stacked style="font-size: 18px;color: rgba(0, 0, 255, 0.645); text-align: center; " >{{"HeHowcanihelp" | translate }}</ion-label> 
+            <ion-textarea maxlength="1000" rows="10" [(ngModel)]="this.ptrHelp.textHelp">
+            </ion-textarea>
+        </ion-item >  
+      </ion-col>
+    </ion-row>
+    <ion-row >   
+      <ion-col col-12>
+          <button ion-button round icon-right  class="btn-Account center" (click)="onSave()" ><!--(click)="onSave()"-->
+            {{"HebtnSend" | translate }}
+          </button>   
+      </ion-col>
+    </ion-row>
+
+    
+  </ion-grid> 
+
+
+</ion-content>
+  
