@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 331:
+/***/ 332:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalCountriesPageModule", function() { return ModalCountriesPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_countries__ = __webpack_require__(342);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_countries__ = __webpack_require__(343);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ ModalCountriesPageModule = __decorate([
 
 /***/ }),
 
-/***/ 342:
+/***/ 343:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -92,7 +92,7 @@ var ModalCountriesPage = (function () {
 }());
 ModalCountriesPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-modal-countries',template:/*ion-inline-start:"/Users/ricaurtetrivino/Documents/Branch/src/pages/modal-countries/modal-countries.html"*/'<!--\n  Generated template for the ModalCountriesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n</ion-header>\n\n<ion-content padding>\n    <ion-list>\n        <ion-item *ngFor="let name of this.ptrGlobals.lstCountry[0]" (click)="onSave( name.CTR_Name,name.Country_Code)">\n            <ion-avatar item-left>\n                <img src="http://www.prontoprontomoney.com/img/{{name.Country_Code}}.png">\n            </ion-avatar>          \n            <h2>{{name.CTR_Name}}  </h2>\n        </ion-item>      \n    </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/ricaurtetrivino/Documents/Branch/src/pages/modal-countries/modal-countries.html"*/,
+        selector: 'page-modal-countries',template:/*ion-inline-start:"/Users/ricaurtetrivino/Documents/2018/Branch/src/pages/modal-countries/modal-countries.html"*/'<!--\n  Generated template for the ModalCountriesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n</ion-header>\n\n<ion-content padding>\n    <ion-list>\n        <ion-item *ngFor="let name of this.ptrGlobals.lstCountry[0]" (click)="onSave( name.CTR_Name,name.Country_Code)">\n            <ion-avatar item-left>\n                <img src="http://www.prontoprontomoney.com/img/{{name.Country_Code}}.png">\n            </ion-avatar>          \n            <h2>{{name.CTR_Name}}  </h2>\n        </ion-item>      \n    </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/ricaurtetrivino/Documents/2018/Branch/src/pages/modal-countries/modal-countries.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__Providers_globals__["c" /* Globals */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */],
         __WEBPACK_IMPORTED_MODULE_2__Providers_globals__["b" /* Cotiza */]])

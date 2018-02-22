@@ -1,8 +1,8 @@
 {
   "name": "Branch",
-  "app_id": "cc1658a6",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "app_id": "cc1658a6"
 }

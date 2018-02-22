@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 332:
+/***/ 334:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalStatesPageModule", function() { return ModalStatesPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_states__ = __webpack_require__(343);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_states__ = __webpack_require__(345);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ ModalStatesPageModule = __decorate([
 
 /***/ }),
 
-/***/ 343:
+/***/ 345:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -92,7 +92,7 @@ var ModalStatesPage = (function () {
 }());
 ModalStatesPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-modal-states',template:/*ion-inline-start:"/Users/ricaurtetrivino/Documents/Branch/src/pages/modal-states/modal-states.html"*/' \n  <ion-content padding>\n      <ion-list>\n          <ion-item *ngFor="let name of this.ptrGlobals.lstStates" (click)="onSave(name.St_Name,name.State_ID )"> \n              <h2>{{name.St_Name}}  </h2>\n          </ion-item>      \n      </ion-list>\n  </ion-content>'/*ion-inline-end:"/Users/ricaurtetrivino/Documents/Branch/src/pages/modal-states/modal-states.html"*/,
+        selector: 'page-modal-states',template:/*ion-inline-start:"/Users/ricaurtetrivino/Documents/2018/Branch/src/pages/modal-states/modal-states.html"*/' \n  <ion-content padding>\n      <ion-list>\n          <ion-item *ngFor="let name of this.ptrGlobals.lstStates" (click)="onSave(name.St_Name,name.State_ID )"> \n              <h2>{{name.St_Name}}  </h2>\n          </ion-item>      \n      </ion-list>\n  </ion-content>'/*ion-inline-end:"/Users/ricaurtetrivino/Documents/2018/Branch/src/pages/modal-states/modal-states.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["c" /* TranslateService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */], __WEBPACK_IMPORTED_MODULE_2__Providers_globals__["c" /* Globals */], __WEBPACK_IMPORTED_MODULE_3__Providers_client_methods_client_methods__["a" /* ClientMethodsProvider */]])
